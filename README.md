@@ -462,23 +462,224 @@ Remember that:
 
 ---
 
+## Task 14: Create a Pull Request
+
+Once you have completed all the previous tasks and pushed your final changes to your fork, create a **Pull Request (PR)** from your fork to the original repository.
+
+**Original repository:**
+`ShlokDivyam1109/DSAI-Mentorship-First-Repo`
+
+Your Pull Request should target:
+
+```text
+base repository: ShlokDivyam1109/DSAI-Mentorship-First-Repo
+base branch: main
+```
+
+Your fork should be the source repository, with your:
+
+```text
+branch: main
+```
+
+### Hint: Using GitHub
+
+1. Open your fork on GitHub.
+2. Go to the **Pull requests** tab.
+3. Click **New pull request**.
+4. Select `ShlokDivyam1109/DSAI-Mentorship-First-Repo` as the **base repository**.
+5. Select `main` as the **base branch**.
+6. Select **your fork** as the **head repository**.
+7. Select `main` as the **compare branch**.
+8. Review the changes.
+9. Create the Pull Request.
+
+Use a meaningful title such as:
+
+```text
+Complete DSAI Mentorship Git Assignment - <YOUR_NAME>
+```
+
+### IMPORTANT
+
+**Do NOT merge the Pull Request.**
+
+You are **not required to have write access** to the original repository. Your fork is where you will make all your changes.
+
+Your job is only to:
+
+```text
+Fork → Clone → Complete Assignment → Push → Create Pull Request
+```
+
+After you create the Pull Request, **stop there**.
+
+The mentor/repository owner will review your Pull Request and merge it into the original repository if the assignment has been completed correctly.
+
+You should **not** request write access to the original repository.
+
+### Submission Checklist
+
+Your submission is complete only when:
+
+- [ ] All required files are present.
+- [ ] `.gitignore` is correctly configured.
+- [ ] The required branch and commits exist in your Git history.
+- [ ] The merge conflict was created and resolved as instructed.
+- [ ] The specified commit was removed using `git rebase`.
+- [ ] The final changes have been pushed to your fork.
+- [ ] A Pull Request has been created from your fork's `main` branch to the original repository's `main` branch.
+- [ ] The Pull Request is **open** and has **not been merged by you**.
+
+**The Pull Request is your final submission.**
+
+---
+
 ## Git Commands You Should Practice
 
-By completing this assignment, you should have used commands such as:
+By completing this assignment, you should have used and understood the following Git and GitHub commands:
+
+### Repository Setup
 
 ```bash
 git clone
 git remote
+git remote -v
+```
+
+### Checking Repository State
+
+```bash
+git status
+git log
+git log --oneline
+git branch
+```
+
+### Adding and Committing Changes
+
+```bash
+git add
+git commit
+```
+
+### Pushing and Synchronizing Changes
+
+```bash
+git push
+git push origin main
+git push origin branch1
+git push --force-with-lease
+```
+
+### Branching
+
+```bash
+git branch
+git branch branch1
+git checkout branch1
+git checkout main
+git checkout -b branch1
+```
+
+### Merging
+
+```bash
+git merge branch1
+```
+
+You should understand how Git identifies conflicting changes and how to resolve a merge conflict.
+
+You should also understand the difference between:
+
+```bash
+git checkout --ours <filename>
+git checkout --theirs <filename>
+```
+
+and why `--theirs` is used in this assignment to make the changes from `branch1` prevail during the conflict resolution.
+
+### Viewing History
+
+```bash
+git log
+git log --oneline
+```
+
+Use these commands to inspect your commit history and verify how your branches and commits changed throughout the assignment.
+
+### Rewriting History
+
+```bash
+git rebase -i HEAD~2
+```
+
+You should understand how an interactive rebase can be used to modify, reorder, squash, or remove commits from Git history.
+
+In this assignment, you will use it to remove the commit that added:
+
+```text
+#Password is Secret123
+```
+
+### Force Pushing After Rebase
+
+```bash
+git push --force-with-lease origin main
+```
+
+You should understand **why a normal `git push` may fail after rewriting history** and why `--force-with-lease` is used to update the remote branch safely after the rebase.
+
+### GitHub Pull Request
+
+Finally, you should understand the workflow of submitting your work through a Pull Request:
+
+```text
+Your Fork
+   ↓
+Your main branch
+   ↓
+Push to GitHub
+   ↓
+Create Pull Request
+   ↓
+Original Repository
+   ↓
+Mentor Reviews
+   ↓
+Mentor Merges
+```
+
+You do **not** need write access to the original repository to create a Pull Request.
+
+---
+
+### Complete Command Checklist
+
+By the end of the assignment, you should be comfortable with:
+
+```bash
+git clone
+git remote
+git remote -v
 git status
 git add
 git commit
 git push
-git checkout
-git branch
-git merge
-git log
-git rebase
+git push origin main
+git push origin branch1
 git push --force-with-lease
+git branch
+git checkout
+git checkout -b
+git merge
+git checkout --ours
+git checkout --theirs
+git log
+git log --oneline
+git rebase -i
 ```
 
-The objective is not merely to reach the final state. You should understand **why** each command is being used and what changes it makes to the Git history.
+The objective is **not merely to reach the final state**. You should understand what each command does, why it is being used, and how it affects your working directory, branches, commits, and Git history.
+
+By the end of this assignment, you should be able to independently perform the basic **fork → clone → branch → commit → push → merge → resolve conflict → rebase → Pull Request** workflow.
