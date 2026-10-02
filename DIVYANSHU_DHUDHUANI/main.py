@@ -1,0 +1,13 @@
+def check(password):
+    pass
+
+def secret_read():
+    with open("secret.txt", "r") as file:
+        content = file.read()
+
+def main():
+    secret_read()
+
+if __name__ == '__main__':
+    main()
+    
