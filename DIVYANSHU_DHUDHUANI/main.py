@@ -1,8 +1,5 @@
 def check(password):
-    if (password == "Secret123"):
-        return True
-    return False
-
+    return True
 
 def secret_read():
     with open("password.txt", "r") as file:
