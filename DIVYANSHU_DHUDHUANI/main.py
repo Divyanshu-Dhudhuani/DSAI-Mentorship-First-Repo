@@ -2,7 +2,7 @@ def check(password):
     pass
 
 def secret_read():
-    with open("secret.txt", "r") as file:
+    with open("password.txt", "r") as file:
         content = file.read()
 
 def main():
